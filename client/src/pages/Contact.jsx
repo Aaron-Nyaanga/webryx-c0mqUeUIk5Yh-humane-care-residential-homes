@@ -102,7 +102,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="py-20 px-6 text-white text-center"
-        style={{ background: 'linear-gradient(135deg, #499D95 0%, #387A74 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #2D6A2F 0%, #1B5218 100%)' }}
       >
         <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
@@ -118,7 +118,7 @@ export default function Contact() {
           <div>
             <h2
               className="font-playfair text-3xl font-bold mb-8"
-              style={{ color: '#387A74' }}
+              style={{ color: '#1B5218' }}
             >
               Get In Touch
             </h2>
@@ -128,11 +128,11 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: '#EBF5F4' }}
+                  style={{ backgroundColor: '#e8f5e9' }}
                 >
                   <svg
                     className="w-5 h-5"
-                    style={{ color: '#499D95' }}
+                    style={{ color: '#2D6A2F' }}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -153,7 +153,7 @@ export default function Contact() {
                   <a
                     href="tel:+18049244211"
                     className="text-gray-800 text-base hover:underline"
-                    style={{ color: '#387A74' }}
+                    style={{ color: '#1B5218' }}
                   >
                     +1 (804) 924-4211
                   </a>
@@ -164,11 +164,11 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: '#EBF5F4' }}
+                  style={{ backgroundColor: '#e8f5e9' }}
                 >
                   <svg
                     className="w-5 h-5"
-                    style={{ color: '#499D95' }}
+                    style={{ color: '#2D6A2F' }}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -204,11 +204,11 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: '#EBF5F4' }}
+                  style={{ backgroundColor: '#e8f5e9' }}
                 >
                   <svg
                     className="w-5 h-5"
-                    style={{ color: '#499D95' }}
+                    style={{ color: '#2D6A2F' }}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -247,7 +247,7 @@ export default function Contact() {
         <div className="text-center mb-10">
           <h2
             className="font-playfair text-3xl font-bold mb-3"
-            style={{ color: '#387A74' }}
+            style={{ color: '#1B5218' }}
           >
             Send Us a Message
           </h2>
@@ -273,7 +273,7 @@ export default function Contact() {
         {/* Card */}
         <div
           className="bg-white shadow-lg rounded-xl overflow-hidden"
-          style={{ borderTop: '4px solid #499D95' }}
+          style={{ borderTop: '4px solid #2D6A2F' }}
         >
           <form onSubmit={handleSubmit} noValidate className="p-8 space-y-6">
             {/* Full Name */}
@@ -401,7 +401,7 @@ export default function Contact() {
               type="submit"
               disabled={loading}
               className="w-full py-3 rounded-lg text-white text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400 disabled:opacity-60 disabled:cursor-not-allowed"
-              style={{ backgroundColor: loading ? '#387A74' : '#499D95' }}
+              style={{ backgroundColor: loading ? '#1B5218' : '#2D6A2F' }}
             >
               {loading ? 'Sending...' : 'Send Message'}
             </button>

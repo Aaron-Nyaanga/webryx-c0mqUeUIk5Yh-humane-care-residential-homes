@@ -18,6 +18,14 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
+      {/* Christmas banner */}
+      <div
+        className="text-white text-center py-2 px-4 text-sm font-medium"
+        style={{ background: 'linear-gradient(90deg, #1B5218 0%, #C41E3A 50%, #1B5218 100%)' }}
+      >
+        🎄 Season's Greetings from the Humane Care family! Wishing you a warm and joyful holiday season. ✨
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
@@ -33,7 +41,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              style={{ color: '#387A74' }}
+              style={{ color: '#1B5218' }}
               className={`font-medium transition-all hover:underline ${
                 pathname === link.to ? 'underline font-semibold' : ''
               }`}
@@ -44,7 +52,7 @@ export default function Header() {
           ))}
           <Link
             to={user ? '/admin/dashboard' : '/admin/login'}
-            style={{ color: '#387A74' }}
+            style={{ color: '#1B5218' }}
             className="font-semibold transition-all hover:underline"
           >
             {user ? 'Dashboard' : 'Sign In'}
@@ -58,9 +66,9 @@ export default function Header() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <span className="block w-6 h-0.5 bg-[#499D95]"></span>
-          <span className="block w-6 h-0.5 bg-[#499D95]"></span>
-          <span className="block w-6 h-0.5 bg-[#499D95]"></span>
+          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
+          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
+          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
         </button>
       </div>
 
@@ -71,7 +79,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              style={{ color: '#387A74' }}
+              style={{ color: '#1B5218' }}
               className={`font-medium hover:underline transition-all ${
                 pathname === link.to ? 'underline font-semibold' : ''
               }`}

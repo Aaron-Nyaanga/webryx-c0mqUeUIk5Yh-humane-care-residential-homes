@@ -148,9 +148,9 @@ export default function Services() {
               <div
                 key={service.title}
                 className="bg-white rounded-xl shadow-sm border border-gray-100 border-t-4 p-6 flex flex-col gap-3 hover:shadow-md transition-shadow"
-                style={{ borderTopColor: '#499D95' }}
+                style={{ borderTopColor: '#2D6A2F' }}
               >
-                <div style={{ color: '#499D95' }}>{service.icon}</div>
+                <div style={{ color: '#2D6A2F' }}>{service.icon}</div>
                 <h3 className="text-lg font-bold text-gray-800">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
               </div>
@@ -160,7 +160,7 @@ export default function Services() {
       </section>
 
       {/* Section 3 — Facility Features */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#f0f9f8' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
             Our Facility
@@ -174,7 +174,7 @@ export default function Services() {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
-                      style={{ color: '#499D95' }}
+                      style={{ color: '#2D6A2F' }}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -222,7 +222,7 @@ export default function Services() {
               <div key={step.number} className="flex flex-col items-center text-center gap-4">
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center text-white text-xl font-bold flex-shrink-0"
-                  style={{ backgroundColor: '#499D95' }}
+                  style={{ backgroundColor: '#2D6A2F' }}
                 >
                   {step.number}
                 </div>
@@ -235,7 +235,7 @@ export default function Services() {
             <Link
               to="/contact"
               className="inline-block px-10 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#499D95' }}
+              style={{ backgroundColor: '#2D6A2F' }}
             >
               Contact Us Today
             </Link>
@@ -244,7 +244,7 @@ export default function Services() {
       </section>
 
       {/* Section 5 — CTA Banner */}
-      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#499D95' }}>
+      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#2D6A2F' }}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Have Questions About Our Services?
@@ -255,7 +255,7 @@ export default function Services() {
           <Link
             to="/contact"
             className="inline-block px-10 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#387A74' }}
+            style={{ backgroundColor: '#1B5218' }}
           >
             Get In Touch
           </Link>

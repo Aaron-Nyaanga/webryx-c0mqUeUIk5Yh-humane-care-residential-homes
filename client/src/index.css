@@ -5,8 +5,8 @@ html {
 }
 
 :root {
-  --color-primary: #499D95;
-  --color-primary-dark: #387A74;
+  --color-primary: #2D6A2F;
+  --color-primary-dark: #1B5218;
 }
 
 body {
@@ -14,4 +14,36 @@ body {
 }
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
+}
+
+/* Christmas snowfall animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% { margin-left: 0; }
+  50% { margin-left: 20px; }
+}
+
+.snowflake {
+  position: fixed;
+  top: -20px;
+  color: #ffffff;
+  font-size: 1.2em;
+  text-shadow: 0 0 4px rgba(200, 230, 255, 0.9);
+  pointer-events: none;
+  z-index: 9998;
+  animation: snowfall linear infinite, sway ease-in-out infinite;
+  user-select: none;
 }
