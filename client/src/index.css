@@ -12,7 +12,21 @@ html {
 body {
   font-family: 'Inter', sans-serif;
 }
+
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
 }
 
+/* Step connector line (Services page) */
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #4E8C52, #a7d9ab);
+}
+
+/* Smooth button press */
+.btn-smooth {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-smooth:hover  { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+.btn-smooth:active { transform: translateY(0);    box-shadow: none; }
