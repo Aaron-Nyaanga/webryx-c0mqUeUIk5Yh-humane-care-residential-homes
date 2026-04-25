@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1B5218' }} className="text-white" role="contentinfo" aria-label="footer">
+    <footer style={{ backgroundColor: '#316B36' }} className="text-white" role="contentinfo" aria-label="footer">
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row md:justify-between gap-6">
         <div>
           <h2 className="text-lg font-semibold mb-2">Humane Care Residential Homes, LLC</h2>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ backgroundColor: '#1B5218' }} className="border-t border-white/20">
+      <div style={{ backgroundColor: '#316B36' }} className="border-t border-white/20">
         <p className="text-center text-sm py-3 px-4">
           &copy; {new Date().getFullYear()} Humane Care Residential Homes, LLC. All rights reserved.
         </p>

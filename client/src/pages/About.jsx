@@ -59,7 +59,7 @@ export default function About() {
           {/* Mission */}
           <div
             className="rounded-xl p-10 flex flex-col gap-4 text-white"
-            style={{ backgroundColor: '#2D6A2F' }}
+            style={{ backgroundColor: '#4E8C52' }}
           >
             <h2 className="text-2xl font-bold">Our Mission</h2>
             <p className="leading-relaxed text-white/90">
@@ -69,7 +69,7 @@ export default function About() {
           {/* Vision */}
           <div
             className="rounded-xl p-10 flex flex-col gap-4 bg-white border-2"
-            style={{ borderColor: '#2D6A2F' }}
+            style={{ borderColor: '#4E8C52' }}
           >
             <h2 className="text-2xl font-bold text-gray-800">Our Vision</h2>
             <p className="leading-relaxed text-gray-600">
@@ -80,7 +80,7 @@ export default function About() {
       </section>
 
       {/* Section 3 — Who We Are */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#fdf8f0' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed text-lg mb-6">
@@ -114,7 +114,7 @@ export default function About() {
       </section>
 
       {/* Section 5 — Core Values */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#fdf8f0' }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Our Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -122,9 +122,9 @@ export default function About() {
               <div
                 key={value.title}
                 className="bg-white rounded-xl shadow-md p-8 flex flex-col gap-4 border-t-4"
-                style={{ borderColor: '#2D6A2F' }}
+                style={{ borderColor: '#4E8C52' }}
               >
-                <div style={{ color: '#2D6A2F' }}>{value.icon}</div>
+                <div style={{ color: '#4E8C52' }}>{value.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800">{value.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{value.text}</p>
               </div>
@@ -134,7 +134,7 @@ export default function About() {
       </section>
 
       {/* Section 6 — CTA Banner */}
-      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#2D6A2F' }}>
+      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#4E8C52' }}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Interested in Our Care?</h2>
           <p className="text-white/90 text-lg mb-8">
@@ -143,7 +143,7 @@ export default function About() {
           <Link
             to="/contact"
             className="inline-block px-10 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#1B5218' }}
+            style={{ backgroundColor: '#316B36' }}
           >
             Contact Us
           </Link>

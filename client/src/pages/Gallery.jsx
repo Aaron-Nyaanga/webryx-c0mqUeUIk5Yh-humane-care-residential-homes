@@ -23,7 +23,7 @@ export default function Gallery() {
       {/* Section 1 — Page Hero */}
       <section
         className="py-32 flex items-center justify-center text-white text-center px-6"
-        style={{ background: 'linear-gradient(135deg, #2D6A2F 0%, #1B5218 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #4E8C52 0%, #316B36 100%)' }}
       >
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Facility</h1>
@@ -63,7 +63,7 @@ export default function Gallery() {
       </section>
 
       {/* Section 3 — CTA Banner */}
-      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#2D6A2F' }}>
+      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#4E8C52' }}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Want to See It in Person?</h2>
           <p className="text-white/90 text-lg mb-8">
@@ -72,7 +72,7 @@ export default function Gallery() {
           <Link
             to="/contact"
             className="inline-block px-10 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#1B5218' }}
+            style={{ backgroundColor: '#316B36' }}
           >
             Schedule a Tour
           </Link>

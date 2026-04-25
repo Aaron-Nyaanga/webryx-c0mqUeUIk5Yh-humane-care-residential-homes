@@ -33,7 +33,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              style={{ color: '#1B5218' }}
+              style={{ color: '#316B36' }}
               className={`font-medium transition-all hover:underline ${
                 pathname === link.to ? 'underline font-semibold' : ''
               }`}
@@ -44,7 +44,7 @@ export default function Header() {
           ))}
           <Link
             to={user ? '/admin/dashboard' : '/admin/login'}
-            style={{ color: '#1B5218' }}
+            style={{ color: '#316B36' }}
             className="font-semibold transition-all hover:underline"
           >
             {user ? 'Dashboard' : 'Sign In'}
@@ -58,9 +58,9 @@ export default function Header() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
-          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
-          <span className="block w-6 h-0.5 bg-[#2D6A2F]"></span>
+          <span className="block w-6 h-0.5 bg-[#4E8C52]"></span>
+          <span className="block w-6 h-0.5 bg-[#4E8C52]"></span>
+          <span className="block w-6 h-0.5 bg-[#4E8C52]"></span>
         </button>
       </div>
 
@@ -71,7 +71,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              style={{ color: '#1B5218' }}
+              style={{ color: '#316B36' }}
               className={`font-medium hover:underline transition-all ${
                 pathname === link.to ? 'underline font-semibold' : ''
               }`}

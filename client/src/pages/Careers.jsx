@@ -267,12 +267,12 @@ export default function Careers() {
       </section>
 
       {/* Section 2 — Why Work With Us */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#fdf8f0' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2
               className="font-playfair text-3xl md:text-4xl font-bold"
-              style={{ color: '#1B5218' }}
+              style={{ color: '#316B36' }}
             >
               Why Work at Humane Care?
             </h2>
@@ -285,7 +285,7 @@ export default function Careers() {
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#e8f5e9', color: '#2D6A2F' }}
+                  style={{ backgroundColor: '#fef0d9', color: '#4E8C52' }}
                 >
                   {benefit.icon}
                 </div>
@@ -303,7 +303,7 @@ export default function Careers() {
           <div className="text-center mb-14">
             <h2
               className="font-playfair text-3xl md:text-4xl font-bold"
-              style={{ color: '#1B5218' }}
+              style={{ color: '#316B36' }}
             >
               Current Openings
             </h2>
@@ -348,7 +348,7 @@ export default function Careers() {
                   <div
                     key={pos.slug}
                     className="bg-white shadow-md rounded-xl overflow-hidden"
-                    style={{ borderLeft: '4px solid #2D6A2F' }}
+                    style={{ borderLeft: '4px solid #4E8C52' }}
                   >
                     <div className="p-8">
                       <div className="flex flex-wrap items-start gap-3 mb-3">
@@ -362,7 +362,7 @@ export default function Careers() {
                       </div>
 
                       {pos.type && hasOpenings && (
-                        <p className="text-sm font-medium mb-4" style={{ color: '#2D6A2F' }}>
+                        <p className="text-sm font-medium mb-4" style={{ color: '#4E8C52' }}>
                           {pos.type}
                         </p>
                       )}
@@ -374,7 +374,7 @@ export default function Careers() {
                           <li key={req} className="flex items-start gap-2 text-sm text-gray-500">
                             <svg
                               className="w-4 h-4 mt-0.5 flex-shrink-0"
-                              style={{ color: '#2D6A2F' }}
+                              style={{ color: '#4E8C52' }}
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -393,7 +393,7 @@ export default function Careers() {
                             type="button"
                             onClick={scrollToForm}
                             className="px-6 py-2.5 rounded-lg text-white text-sm font-semibold transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400"
-                            style={{ backgroundColor: '#2D6A2F' }}
+                            style={{ backgroundColor: '#4E8C52' }}
                           >
                             Apply Now
                           </button>
@@ -423,12 +423,12 @@ export default function Careers() {
       </section>
 
       {/* Section 4 — Application Form */}
-      <section id="application-form" className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
+      <section id="application-form" className="py-20 px-6" style={{ backgroundColor: '#fdf8f0' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2
               className="font-playfair text-3xl md:text-4xl font-bold mb-3"
-              style={{ color: '#1B5218' }}
+              style={{ color: '#316B36' }}
             >
               Apply Now
             </h2>
@@ -439,7 +439,7 @@ export default function Careers() {
 
           {/* Loading state — form skeleton while Firestore data is in flight */}
           {firestorePositions === null ? (
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden p-8 space-y-5" style={{ borderTop: '4px solid #2D6A2F' }}>
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden p-8 space-y-5" style={{ borderTop: '4px solid #4E8C52' }}>
               {[1, 2, 3, 4, 5].map((n) => (
                 <div key={n} className="animate-pulse space-y-2">
                   <div className="h-3 bg-gray-200 rounded w-32" />
@@ -484,7 +484,7 @@ export default function Careers() {
           {/* Card */}
           <div
             className="bg-white shadow-lg rounded-xl overflow-hidden"
-            style={{ borderTop: '4px solid #2D6A2F' }}
+            style={{ borderTop: '4px solid #4E8C52' }}
           >
             <form onSubmit={handleSubmit} noValidate className="p-8 space-y-6">
 
@@ -648,10 +648,10 @@ export default function Careers() {
                   style={
                     errors.resume
                       ? {}
-                      : { '--file-bg': '#2D6A2F' }
+                      : { '--file-bg': '#4E8C52' }
                   }
                 />
-                <style>{`#resume::file-selector-button { background-color: #2D6A2F; } #resume::file-selector-button:hover { background-color: #1B5218; }`}</style>
+                <style>{`#resume::file-selector-button { background-color: #4E8C52; } #resume::file-selector-button:hover { background-color: #316B36; }`}</style>
                 {file && !errors.resume && (
                   <p className="mt-1 text-xs text-gray-500">Selected: {file.name}</p>
                 )}
@@ -663,7 +663,7 @@ export default function Careers() {
                 type="submit"
                 disabled={isLoading}
                 className="w-full py-3 rounded-lg text-white text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400 disabled:opacity-60 disabled:cursor-not-allowed"
-                style={{ backgroundColor: isLoading ? '#1B5218' : '#2D6A2F' }}
+                style={{ backgroundColor: isLoading ? '#316B36' : '#4E8C52' }}
               >
                 {buttonLabel}
               </button>

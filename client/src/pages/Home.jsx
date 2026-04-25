@@ -125,7 +125,7 @@ export default function Home() {
             <Link
               to="/contact"
               className="px-8 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#2D6A2F' }}
+              style={{ backgroundColor: '#4E8C52' }}
             >
               Get In Touch
             </Link>
@@ -152,7 +152,7 @@ export default function Home() {
                 key={service.title}
                 className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-8 flex flex-col gap-4 border border-gray-100"
               >
-                <div style={{ color: '#2D6A2F' }}>{service.icon}</div>
+                <div style={{ color: '#4E8C52' }}>{service.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800">{service.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{service.description}</p>
               </div>
@@ -162,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* Section 3 — Why Choose Us */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#f0f7f0' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#fdf8f0' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
@@ -178,7 +178,7 @@ export default function Home() {
               <div key={item.title} className="flex gap-5 items-start">
                 <div
                   className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white"
-                  style={{ backgroundColor: '#2D6A2F' }}
+                  style={{ backgroundColor: '#4E8C52' }}
                 >
                   {item.icon}
                 </div>
@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* Section 5 — CTA Banner */}
-      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#2D6A2F' }}>
+      <section className="py-20 px-6 text-white text-center" style={{ backgroundColor: '#4E8C52' }}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Learn More?</h2>
           <p className="text-white/90 text-lg mb-8">
@@ -223,7 +223,7 @@ export default function Home() {
           <Link
             to="/contact"
             className="inline-block px-10 py-3 rounded-md font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#1B5218' }}
+            style={{ backgroundColor: '#316B36' }}
           >
             Contact Us
           </Link>
