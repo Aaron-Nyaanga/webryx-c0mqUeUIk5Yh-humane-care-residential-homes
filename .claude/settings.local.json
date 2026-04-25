@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(discord:configure)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(claude mcp:*)",
+      "Bash(bun --version)",
+      "Read(//c/Users/Aaron/.claude/plugins/marketplaces/claude-plugins-official/external_plugins/discord/**)",
+      "Bash(node:*)",
+      "Bash(mkdir -p \"C:/Users/Aaron/.claude/channels/discord/approved\")"
+    ]
+  }
+}

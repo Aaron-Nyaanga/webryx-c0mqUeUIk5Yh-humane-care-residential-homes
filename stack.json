@@ -1,0 +1,5 @@
+{
+  "firebase": true,
+  "functions": true,
+  "rootDirectory": "client"
+}

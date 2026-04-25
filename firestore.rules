@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /clients/{clientId}/apps/{appId}/contactSubmissions/{docId} {
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'phone', 'inquiryType', 'message', 'createdAt', 'status'])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.message is string
+        && request.resource.data.status == 'new';
+      allow read, update: if request.auth != null;
+      allow delete: if false;
+    }
+
+    match /clients/{clientId}/apps/{appId}/careerApplications/{docId} {
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'phone', 'position', 'experience', 'message', 'resumeUrl', 'status', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.position is string
+        && request.resource.data.status == 'new';
+      allow read: if request.auth != null;
+      allow update: if request.auth != null
+        && !(resource.data.status == 'approved' || resource.data.status == 'rejected');
+      allow delete: if false;
+    }
+
+    match /clients/{clientId}/apps/{appId}/jobPositions/{positionId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['openings', 'updatedAt']);
+      allow delete: if false;
+    }
+
+    // Everything else — deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

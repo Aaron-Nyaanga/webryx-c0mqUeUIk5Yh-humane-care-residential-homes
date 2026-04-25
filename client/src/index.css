@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #499D95;
+  --color-primary-dark: #387A74;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
