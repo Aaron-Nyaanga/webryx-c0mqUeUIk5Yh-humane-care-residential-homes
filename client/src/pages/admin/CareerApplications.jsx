@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { query, orderBy, onSnapshot, updateDoc } from 'firebase/firestore'
+import { useAuth } from '../../context/AuthContext'
 import { appColl, appDoc } from '../../firebase/config'
 import ApprovalModal from '../../components/admin/ApprovalModal'
 import RejectionModal from '../../components/admin/RejectionModal'
@@ -166,6 +167,7 @@ function DetailPanel({ app, onStatusChange, updating, onApprove, onReject }) {
 export default function CareerApplications() {
   const [applications, setApplications] = useState([])
   const [loading, setLoading] = useState(true)
+  const { user } = useAuth()
   const [activeTab, setActiveTab] = useState('All')
   const [expandedId, setExpandedId] = useState(null)
   const [updating, setUpdating] = useState(null) // { id, status }
@@ -173,13 +175,14 @@ export default function CareerApplications() {
   const [rejectionModal, setRejectionModal] = useState(null)
 
   useEffect(() => {
+    if (!user) return
     const q = query(appColl('careerApplications'), orderBy('createdAt', 'desc'))
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setApplications(snapshot.docs.map(d => ({ id: d.id, ...d.data() })))
       setLoading(false)
     })
     return unsubscribe
-  }, [])
+  }, [user])
 
   const filtered = applications.filter((a) => {
     if (activeTab === 'All') return true

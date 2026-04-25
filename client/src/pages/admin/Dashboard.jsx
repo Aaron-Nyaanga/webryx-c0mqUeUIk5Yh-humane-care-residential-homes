@@ -69,7 +69,7 @@ function SummaryCard({ label, value, badge }) {
 }
 
 export default function Dashboard() {
-  const { logout } = useAuth()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('Overview')
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -81,6 +81,8 @@ export default function Dashboard() {
   const [careerNew, setCareerNew] = useState(null)
 
   useEffect(() => {
+    if (!user) return
+
     const qContact = query(appColl('contactSubmissions'))
     const unsubContact = onSnapshot(qContact, (snapshot) => {
       const docs = snapshot.docs.map(d => d.data())
@@ -99,7 +101,7 @@ export default function Dashboard() {
       unsubContact()
       unsubCareer()
     }
-  }, [])
+  }, [user])
 
   const combinedNew =
     contactNew !== null && careerNew !== null ? contactNew + careerNew : null

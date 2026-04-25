@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { query, orderBy, onSnapshot, updateDoc } from 'firebase/firestore'
+import { useAuth } from '../../context/AuthContext'
 import { appColl, appDoc } from '../../firebase/config'
 
 const TABS = ['All', 'New', 'Reviewed']
@@ -48,6 +49,7 @@ function formatDate(timestamp) {
 }
 
 export default function ContactSubmissions() {
+  const { user } = useAuth()
   const [submissions, setSubmissions] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('All')
@@ -55,13 +57,14 @@ export default function ContactSubmissions() {
   const [updating, setUpdating] = useState(null)
 
   useEffect(() => {
+    if (!user) return
     const q = query(appColl('contactSubmissions'), orderBy('createdAt', 'desc'))
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setSubmissions(snapshot.docs.map(d => ({ id: d.id, ...d.data() })))
       setLoading(false)
     })
     return unsubscribe
-  }, [])
+  }, [user])
 
   const filtered = submissions.filter((s) => {
     if (activeTab === 'All') return true
