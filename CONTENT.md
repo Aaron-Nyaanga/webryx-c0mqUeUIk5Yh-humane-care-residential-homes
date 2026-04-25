@@ -8,7 +8,7 @@ Scraped: 2026-04-04
 
 **Business Name:** Humane Care Residential Homes, LLC
 **Tagline:** "Group Homes for Adults with Disabilities"
-**Key Quote:** "Home is not where you live but where they understand you" — Christian Morgenstern
+**Key Quote:** "Home iss not where you live but where they understand you" — Christian Morgenstern
 
 **Logo URL:**
 `https://img1.wsimg.com/isteam/ip/c4b9dfa8-0b20-4cbe-9ee1-c309928d05ca/humane-care-logo-eda3f87.png`
