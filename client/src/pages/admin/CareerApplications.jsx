@@ -89,6 +89,10 @@ function DetailPanel({ app, onStatusChange, updating, onApprove, onReject }) {
           <p className="text-sm text-gray-800">{app.experience || '—'}</p>
         </div>
         <div>
+          <p className="text-xs font-semibold text-gray-400 uppercase mb-0.5">Preferred Shift</p>
+          <p className="text-sm text-gray-800">{app.preferredShift || '—'}</p>
+        </div>
+        <div>
           <p className="text-xs font-semibold text-gray-400 uppercase mb-0.5">Current Status</p>
           <StatusBadge status={app.status || 'new'} />
         </div>

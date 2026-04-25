@@ -18,14 +18,6 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
-      {/* Christmas banner */}
-      <div
-        className="text-white text-center py-2 px-4 text-sm font-medium"
-        style={{ background: 'linear-gradient(90deg, #1B5218 0%, #C41E3A 50%, #1B5218 100%)' }}
-      >
-        🎄 Season's Greetings from the Humane Care family! Wishing you a warm and joyful holiday season. ✨
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img

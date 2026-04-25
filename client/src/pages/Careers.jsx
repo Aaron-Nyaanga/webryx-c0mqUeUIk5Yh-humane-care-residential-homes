@@ -15,6 +15,7 @@ const initialForm = {
   phone: '',
   position: '',
   experience: '',
+  preferredShift: '',
   message: '',
 }
 
@@ -199,6 +200,7 @@ export default function Careers() {
         phone: form.phone,
         position: form.position,
         experience: form.experience,
+        preferredShift: form.preferredShift,
         message: form.message,
         resumeUrl,
         status: 'new',
@@ -213,6 +215,7 @@ export default function Careers() {
         phone: form.phone,
         position: form.position,
         experience: form.experience,
+        preferredShift: form.preferredShift,
         message: form.message,
         resumeUrl,
       })
@@ -588,6 +591,26 @@ export default function Careers() {
                   <option value="10+ years">10+ years</option>
                 </select>
                 {errors.experience && <p className="mt-1 text-xs text-red-600">{errors.experience}</p>}
+              </div>
+
+              {/* Preferred Shift */}
+              <div>
+                <label htmlFor="preferredShift" className="block text-sm font-semibold text-gray-700 mb-1">
+                  Preferred Shift <span className="text-gray-400 font-normal">(optional)</span>
+                </label>
+                <select
+                  id="preferredShift"
+                  name="preferredShift"
+                  value={form.preferredShift}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 transition bg-white"
+                >
+                  <option value="">No preference</option>
+                  <option value="Morning (7am–3pm)">Morning (7am–3pm)</option>
+                  <option value="Afternoon (3pm–11pm)">Afternoon (3pm–11pm)</option>
+                  <option value="Night (11pm–7am)">Night (11pm–7am)</option>
+                  <option value="Flexible / Any">Flexible / Any</option>
+                </select>
               </div>
 
               {/* Cover Letter */}
