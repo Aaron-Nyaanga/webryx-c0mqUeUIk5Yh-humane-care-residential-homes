@@ -168,9 +168,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               Why Families Choose Humane Care
             </h2>
-            <blockquote className="italic text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <blockquote className="italic text-xl md:text-2xl font-bold text-gray-700 max-w-2xl mx-auto leading-relaxed">
               "Home is not where you live but where they understand you"
-              <footer className="mt-3 text-base not-italic text-gray-500">— Christian Morgenstern</footer>
+              <footer className="mt-3 text-base not-italic font-semibold text-gray-600">— Christian Morgenstern</footer>
             </blockquote>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14">
