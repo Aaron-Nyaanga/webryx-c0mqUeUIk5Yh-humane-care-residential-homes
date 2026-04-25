@@ -44,7 +44,8 @@ export default function Header() {
           ))}
           <Link
             to={user ? '/admin/dashboard' : '/admin/login'}
-            className="px-4 py-1.5 rounded-lg text-sm font-semibold bg-[#499D95] text-white hover:bg-[#387A74] transition-colors"
+            style={{ color: '#387A74' }}
+            className="font-semibold transition-all hover:underline"
           >
             {user ? 'Dashboard' : 'Sign In'}
           </Link>
