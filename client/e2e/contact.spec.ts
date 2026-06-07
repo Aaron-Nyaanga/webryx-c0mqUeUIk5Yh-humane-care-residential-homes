@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { clearFirestore } from './helpers/reset'
 
-const PROJECT_ID = 'humane-care-residential-homes'
+const PROJECT_ID = 'webmint-83535'
 const FIRESTORE_BASE = 'http://127.0.0.1:8080'
 
 async function getContactSubmissions() {

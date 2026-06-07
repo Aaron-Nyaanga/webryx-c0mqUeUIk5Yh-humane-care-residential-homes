@@ -19,7 +19,7 @@ const serviceAccount = require('./serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  projectId: 'humane-care-residential-homes',
+  projectId: 'webmint-83535',
 });
 
 const db = admin.firestore();
