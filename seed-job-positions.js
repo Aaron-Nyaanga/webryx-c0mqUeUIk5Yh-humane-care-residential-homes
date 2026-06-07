@@ -36,6 +36,11 @@ const positions = [
     openings: 1,
   },
   {
+    slug: 'cna',
+    title: 'Certified Nursing Assistant (CNA)',
+    openings: 0,
+  },
+  {
     slug: 'rn',
     title: 'Registered Nurse (RN)',
     openings: 0,
@@ -56,7 +61,7 @@ async function seed() {
   }
 
   await batch.commit();
-  console.log('Seeded jobPositions: lpn, dsp, rn');
+  console.log('Seeded jobPositions: lpn, dsp, cna, rn');
   process.exit(0);
 }
 

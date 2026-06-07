@@ -60,6 +60,11 @@ async function seedJobPositions() {
     title: strVal('Direct Support Professional (DSP)'),
     openings: intVal(1),
   })
+  await firestoreSet('jobPositions', 'cna', {
+    slug: strVal('cna'),
+    title: strVal('Certified Nursing Assistant (CNA)'),
+    openings: intVal(0),
+  })
   await firestoreSet('jobPositions', 'rn', {
     slug: strVal('rn'),
     title: strVal('Registered Nurse (RN)'),
