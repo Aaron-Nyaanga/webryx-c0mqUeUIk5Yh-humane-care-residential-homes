@@ -5,7 +5,7 @@ import { fadeUp, fadeLeft, fadeRight, stagger, cardItem, vp } from '../utils/mot
 import { addDoc, onSnapshot, serverTimestamp } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { httpsCallable } from 'firebase/functions'
-import { storage, functions, appColl, fnName } from '../firebase/config'
+import { storage, functions, appColl, appStoragePath, fnName } from '../firebase/config'
 
 const ACCEPTED_TYPES = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
 const ACCEPTED_EXTENSIONS = ['.pdf', '.doc', '.docx']
@@ -93,7 +93,7 @@ export default function Careers() {
     if (Object.keys(validationErrors).length > 0) { setErrors(validationErrors); return }
     try {
       setSubmitState('uploading')
-      const storageRef = ref(storage, `resumes/${Date.now()}_${file.name}`)
+      const storageRef = ref(storage, appStoragePath(`resumes/${Date.now()}_${file.name}`))
       await uploadBytes(storageRef, file)
       const resumeUrl = await getDownloadURL(storageRef)
       setSubmitState('submitting')

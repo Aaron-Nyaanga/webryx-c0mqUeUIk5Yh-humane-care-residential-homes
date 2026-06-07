@@ -1,7 +1,7 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    match /resumes/{fileName} {
+    match /clients/{clientId}/apps/{appId}/resumes/{fileName} {
       allow write: if request.resource.size < 5 * 1024 * 1024
         && request.resource.contentType.matches('application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document');
       allow read: if request.auth != null;

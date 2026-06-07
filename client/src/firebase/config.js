@@ -25,6 +25,7 @@ const APP_ID = import.meta.env.VITE_APP_ID || '';
 
 export const appColl = (name) => collection(db, 'clients', CLIENT_ID, 'apps', APP_ID, name);
 export const appDoc = (name, id) => doc(db, 'clients', CLIENT_ID, 'apps', APP_ID, name, id);
+export const appStoragePath = (path) => `clients/${CLIENT_ID}/apps/${APP_ID}/${path}`;
 
 const clientId12 = CLIENT_ID.substring(0, 12);
 const appId12 = APP_ID.substring(0, 12);
