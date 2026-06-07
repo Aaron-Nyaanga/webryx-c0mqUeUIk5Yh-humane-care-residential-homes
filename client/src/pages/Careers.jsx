@@ -21,6 +21,8 @@ const SHIFT_OPTIONS = [
   '4pm – 11pm',
   '5pm – 12am',
   '5pm – 9pm',
+  '12am – 9am',
+  '12am – 8am',
 ]
 
 const initialForm = { name: '', email: '', phone: '', position: '', experience: '', preferredShifts: [], message: '' }
