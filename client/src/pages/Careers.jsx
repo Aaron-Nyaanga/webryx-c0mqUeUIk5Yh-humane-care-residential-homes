@@ -11,9 +11,21 @@ const ACCEPTED_TYPES = ['application/pdf', 'application/msword', 'application/vn
 const ACCEPTED_EXTENSIONS = ['.pdf', '.doc', '.docx']
 const MAX_FILE_BYTES = 5 * 1024 * 1024
 
-const initialForm = { name: '', email: '', phone: '', position: '', experience: '', preferredShift: '', message: '' }
+const SHIFT_OPTIONS = [
+  '8am – 8pm',
+  '8pm – 8am',
+  '9am – 9pm',
+  '9pm – 9am',
+  '9am – 3pm',
+  '3pm – 12am',
+  '4pm – 11pm',
+  '5pm – 12am',
+  '5pm – 9pm',
+]
 
-function validateForm({ name, email, phone, position, experience }, file, positions) {
+const initialForm = { name: '', email: '', phone: '', position: '', experience: '', preferredShifts: [], message: '' }
+
+function validateForm({ name, email, phone, position, experience, preferredShifts }, file, positions) {
   const errors = {}
   if (!name.trim()) errors.name = 'Full name is required.'
   if (!email.trim()) { errors.email = 'Email address is required.' }
@@ -81,6 +93,16 @@ export default function Careers() {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }))
   }
 
+  function handleShiftToggle(shift) {
+    setForm((prev) => {
+      const current = prev.preferredShifts
+      const next = current.includes(shift)
+        ? current.filter((s) => s !== shift)
+        : [...current, shift]
+      return { ...prev, preferredShifts: next }
+    })
+  }
+
   function handleFileChange(e) {
     const selected = e.target.files[0] || null
     setFile(selected)
@@ -98,9 +120,9 @@ export default function Careers() {
       await uploadBytes(storageRef, file)
       const resumeUrl = await getDownloadURL(storageRef)
       setSubmitState('submitting')
-      await addDoc(appColl('careerApplications'), { name: form.name, email: form.email, phone: form.phone, position: form.position, experience: form.experience, preferredShift: form.preferredShift, message: form.message, resumeUrl, status: 'new', statusHistory: [], createdAt: serverTimestamp() })
+      await addDoc(appColl('careerApplications'), { name: form.name, email: form.email, phone: form.phone, position: form.position, experience: form.experience, preferredShifts: form.preferredShifts, message: form.message, resumeUrl, status: 'new', statusHistory: [], createdAt: serverTimestamp() })
       const sendCareerEmail = httpsCallable(functions, fnName('sendCareerEmail'))
-      await sendCareerEmail({ name: form.name, email: form.email, phone: form.phone, position: form.position, experience: form.experience, preferredShift: form.preferredShift, message: form.message, resumeUrl })
+      await sendCareerEmail({ name: form.name, email: form.email, phone: form.phone, position: form.position, experience: form.experience, preferredShifts: form.preferredShifts, message: form.message, resumeUrl })
       setBanner({ type: 'success', message: "Application submitted! We'll review your application and be in touch soon." })
       setForm(initialForm)
       setFile(null)
@@ -340,14 +362,33 @@ export default function Careers() {
                   </div>
 
                   <div>
-                    <label htmlFor="preferredShift" className="block text-sm font-semibold text-gray-700 mb-2">Preferred Shift <span className="text-gray-400 font-normal">(optional)</span></label>
-                    <select id="preferredShift" name="preferredShift" value={form.preferredShift} onChange={handleChange} className={inputClass(false)}>
-                      <option value="">No preference</option>
-                      <option value="Morning (7am–3pm)">Morning (7am–3pm)</option>
-                      <option value="Afternoon (3pm–11pm)">Afternoon (3pm–11pm)</option>
-                      <option value="Night (11pm–7am)">Night (11pm–7am)</option>
-                      <option value="Flexible / Any">Flexible / Any</option>
-                    </select>
+                    <p className="block text-sm font-semibold text-gray-700 mb-3">Preferred Shift(s) <span className="text-gray-400 font-normal">(optional — select all that apply)</span></p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                      {SHIFT_OPTIONS.map((shift) => {
+                        const checked = form.preferredShifts.includes(shift)
+                        return (
+                          <label
+                            key={shift}
+                            className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border cursor-pointer text-sm transition-all duration-150 select-none ${checked ? 'border-green-400 bg-green-50 text-green-800' : 'border-gray-200 bg-gray-50 text-gray-700 hover:border-green-300 hover:bg-green-50/50'}`}
+                          >
+                            <input
+                              type="checkbox"
+                              className="sr-only"
+                              checked={checked}
+                              onChange={() => handleShiftToggle(shift)}
+                            />
+                            <span className={`flex-shrink-0 w-4 h-4 rounded border flex items-center justify-center transition-colors ${checked ? 'border-green-500 bg-green-500' : 'border-gray-300 bg-white'}`}>
+                              {checked && (
+                                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                              )}
+                            </span>
+                            <span className="font-medium leading-tight">{shift}</span>
+                          </label>
+                        )
+                      })}
+                    </div>
                   </div>
 
                   <div>

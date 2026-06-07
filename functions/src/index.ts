@@ -54,7 +54,10 @@ export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall
 
 // ─── 2. Career Application Email ─────────────────────────────────────────────
 export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async (data: any, context) => {
-  const { name, email, phone, position, experience, message, resumeUrl } = data
+  const { name, email, phone, position, experience, preferredShifts, message, resumeUrl } = data
+  const shiftsDisplay = Array.isArray(preferredShifts) && preferredShifts.length > 0
+    ? preferredShifts.join(', ')
+    : (data.preferredShift || 'No preference')
 
   if (!name || !email || !position) {
     throw new functions.https.HttpsError('invalid-argument', 'Missing required fields')
@@ -79,6 +82,7 @@ export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(
             <tr><td style="padding: 8px 0; color: #666;"><strong>Phone</strong></td><td style="padding: 8px 0;">${phone || 'Not provided'}</td></tr>
             <tr><td style="padding: 8px 0; color: #666;"><strong>Position</strong></td><td style="padding: 8px 0;"><strong>${position}</strong></td></tr>
             <tr><td style="padding: 8px 0; color: #666;"><strong>Experience</strong></td><td style="padding: 8px 0;">${experience || 'Not specified'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Preferred Shifts</strong></td><td style="padding: 8px 0;">${shiftsDisplay}</td></tr>
           </table>
           ${message ? `
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 16px 0;" />

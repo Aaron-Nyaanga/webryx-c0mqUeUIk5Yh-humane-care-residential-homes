@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendRejectionEmail = exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendApprovalEmail = exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendCareerEmail = exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendContactEmail = void 0;
+exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendRejectionEmail = exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendApprovalEmail = exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendContactEmail = void 0;
 const functions = __importStar(require("firebase-functions/v1"));
 const admin = __importStar(require("firebase-admin"));
 const nodemailer = __importStar(require("nodemailer"));
@@ -48,7 +48,7 @@ function createTransporter() {
     });
 }
 // ─── 1. Contact Form Email ───────────────────────────────────────────────────
-exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall(async (data, context) => {
+exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall(async (data, context) => {
     const { name, email, phone, inquiryType, message } = data;
     if (!name || !email || !message) {
         throw new functions.https.HttpsError('invalid-argument', 'Missing required fields');
@@ -81,8 +81,11 @@ exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall(asyn
     return { success: true };
 });
 // ─── 2. Career Application Email ─────────────────────────────────────────────
-exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async (data, context) => {
-    const { name, email, phone, position, experience, message, resumeUrl } = data;
+exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async (data, context) => {
+    const { name, email, phone, position, experience, preferredShifts, message, resumeUrl } = data;
+    const shiftsDisplay = Array.isArray(preferredShifts) && preferredShifts.length > 0
+        ? preferredShifts.join(', ')
+        : (data.preferredShift || 'No preference');
     if (!name || !email || !position) {
         throw new functions.https.HttpsError('invalid-argument', 'Missing required fields');
     }
@@ -104,6 +107,7 @@ exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async
             <tr><td style="padding: 8px 0; color: #666;"><strong>Phone</strong></td><td style="padding: 8px 0;">${phone || 'Not provided'}</td></tr>
             <tr><td style="padding: 8px 0; color: #666;"><strong>Position</strong></td><td style="padding: 8px 0;"><strong>${position}</strong></td></tr>
             <tr><td style="padding: 8px 0; color: #666;"><strong>Experience</strong></td><td style="padding: 8px 0;">${experience || 'Not specified'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Preferred Shifts</strong></td><td style="padding: 8px 0;">${shiftsDisplay}</td></tr>
           </table>
           ${message ? `
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 16px 0;" />
@@ -121,7 +125,7 @@ exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async
     return { success: true };
 });
 // ─── 3. Approval Email to Applicant ──────────────────────────────────────────
-exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCall(async (data, context) => {
+exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCall(async (data, context) => {
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'Must be authenticated');
     }
@@ -149,7 +153,7 @@ exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCall(asy
     return { success: true };
 });
 // ─── 4. Rejection Email to Applicant ─────────────────────────────────────────
-exports.c0mqUeUIk5Yh_Wry9mKq4xPn2_sendRejectionEmail = functions.https.onCall(async (data, context) => {
+exports.CGE0MOVxp3Vb_Wry9mKq4xPn2_sendRejectionEmail = functions.https.onCall(async (data, context) => {
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'Must be authenticated');
     }
