@@ -105,7 +105,8 @@ export default function Careers() {
       setFile(null)
       setErrors({})
       if (fileInputRef.current) fileInputRef.current.value = ''
-    } catch {
+    } catch (err) {
+      console.error('Career application submission failed:', err)
       setBanner({ type: 'error', message: 'Something went wrong. Please try again or email us directly.' })
     } finally {
       setSubmitState('idle')

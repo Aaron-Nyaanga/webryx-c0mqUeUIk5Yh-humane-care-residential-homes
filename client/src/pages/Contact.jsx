@@ -77,7 +77,8 @@ export default function Contact() {
       setBanner({ type: 'success', message: "Thank you! Your message has been sent. We'll be in touch soon." })
       setForm(initialForm)
       setErrors({})
-    } catch {
+    } catch (err) {
+      console.error('Contact form submission failed:', err)
       setBanner({ type: 'error', message: 'Something went wrong. Please try again or call us directly.' })
     } finally {
       setLoading(false)
