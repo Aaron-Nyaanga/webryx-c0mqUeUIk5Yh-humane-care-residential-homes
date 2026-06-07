@@ -15,7 +15,7 @@ function createTransporter() {
 }
 
 // ─── 1. Contact Form Email ───────────────────────────────────────────────────
-export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall(async (data: any, context) => {
+export const DEksqDu4opQx_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall(async (data: any, context) => {
   const { name, email, phone, inquiryType, message } = data
 
   if (!name || !email || !message) {
@@ -53,7 +53,7 @@ export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendContactEmail = functions.https.onCall
 })
 
 // ─── 2. Career Application Email ─────────────────────────────────────────────
-export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async (data: any, context) => {
+export const DEksqDu4opQx_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(async (data: any, context) => {
   const { name, email, phone, position, experience, message, resumeUrl } = data
 
   if (!name || !email || !position) {
@@ -98,7 +98,7 @@ export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendCareerEmail = functions.https.onCall(
 })
 
 // ─── 3. Approval Email to Applicant ──────────────────────────────────────────
-export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCall(async (data: any, context) => {
+export const DEksqDu4opQx_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCall(async (data: any, context) => {
   if (!context.auth) {
     throw new functions.https.HttpsError('unauthenticated', 'Must be authenticated')
   }
@@ -132,7 +132,7 @@ export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendApprovalEmail = functions.https.onCal
 })
 
 // ─── 4. Rejection Email to Applicant ─────────────────────────────────────────
-export const CGE0MOVxp3Vb_Wry9mKq4xPn2_sendRejectionEmail = functions.https.onCall(async (data: any, context) => {
+export const DEksqDu4opQx_Wry9mKq4xPn2_sendRejectionEmail = functions.https.onCall(async (data: any, context) => {
   if (!context.auth) {
     throw new functions.https.HttpsError('unauthenticated', 'Must be authenticated')
   }
